@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/reporters'
 require_relative '../lib/reverse_words'
+require 'minitest/skip_dsl'
 
 describe "reverse words" do
   describe "basic tests" do
@@ -22,7 +23,7 @@ describe "reverse words" do
   end
 
   # check for edge cases
-  describe "edge cases" do
+  xdescribe "edge cases" do
     # if it's a string parameter, check for empty
     it "reverse each word in an empty sentence" do
       test_string = ""

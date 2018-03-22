@@ -1,28 +1,36 @@
 # A method to reverse each word in a sentence, in place.
+
 def reverse_words(my_words)
-  i = 0
-  num = my_words.length
+  return my_words if my_words.nil? || my_words.length == 1
 
-  # split letters in word (create an array)
-  # while the letter in my_words is not the last letter, then
-  # flip the first letter and the last letter,
-  # reset the first letter by incrementing by one and last letter
-  # by subtracting one
+  index = 0
 
-  while i < my_words.length
-    # temp = array[a]
-    # array[a] = array[b]
-    # array[b] = temp
-    # a += 1
-    # b -= 1
-    temp = my_words[i]
-    my_words[i] = num
-    num = temp
+  while index < my_words.length
+    while my_words[index] != " "
+      index += 1
+    end
 
-    i += 1
-    i -= 1
+    start = index
+
+    until my_words[index] == ' ' || index == my_words.length - 1
+      index += 1
+    end
+
+    if index == my_words.length - 1
+      end_point = index
+    else
+      end_point = index - 1
+    end
+
+    while index < my_words.length
+      temp = my_words[start]
+      my_words[start] = my_words[end_point]
+      my_words[end_point] = temp
+
+      start += 1
+      end_point -= 1
+    end
+    index += 1
   end
-
-
-
-  end
+  return my_words
+end
