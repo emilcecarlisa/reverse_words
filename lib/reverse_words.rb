@@ -1,4 +1,5 @@
 # A method to reverse each word in a sentence, in place.
+require "pry"
 
 def reverse_words(my_words)
   return my_words if my_words.nil? || my_words.length == 1
@@ -27,6 +28,7 @@ def reverse_words(my_words)
       my_words[start] = my_words[end_point]
       my_words[end_point] = temp
 
+      binding.pry 
       start += 1
       end_point -= 1
     end
