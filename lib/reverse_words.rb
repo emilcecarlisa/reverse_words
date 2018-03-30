@@ -7,7 +7,7 @@
     index = 0
 
     while index < my_words.length
-      until my_words[index] != " " || index >= my_words.length
+      until my_words[index] != " " #|| index >= my_words.length
         index += 1
       end
 
@@ -37,6 +37,4 @@
     return my_words
   end
 
-  puts reverse_words("I can be an  engineer")
-
-end
+puts reverse_words("I can be an engineer")
